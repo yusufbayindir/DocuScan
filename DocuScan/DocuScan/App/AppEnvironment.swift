@@ -5,9 +5,12 @@ import Combine
 final class AppEnvironment: ObservableObject {
     let adService: AdService
     let documentStore: DocumentStore
+    let iapService: IAPService
 
     init() {
-        self.adService = AdService()
+        let ads = AdService()
+        self.adService = ads
         self.documentStore = DocumentStore()
+        self.iapService = IAPService(adService: ads)
     }
 }

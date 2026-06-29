@@ -15,14 +15,6 @@ final class SettingsViewModel: ObservableObject {
     private let reviewCooldownDays: Double = 7
     private let lastReviewRequestKey = "settings.lastReviewRequestDate"
 
-    // MARK: - Premium
-
-    func purchasePremium() {
-        // Stub: real StoreKit purchase would go here
-        print("Purchase triggered")
-        isPremium = true
-    }
-
     // MARK: - Rate Us
 
     func requestReviewIfAppropriate(scene: UIWindowScene) {
@@ -82,6 +74,7 @@ final class SettingsViewModel: ObservableObject {
 
 struct SettingsView: View {
     @StateObject private var viewModel = SettingsViewModel()
+    @EnvironmentObject private var appEnvironment: AppEnvironment
     @State private var showShareSheet = false
     @State private var showPrivacyPolicy = false
     @State private var showTermsOfUse = false
@@ -115,6 +108,21 @@ struct SettingsView: View {
                 SafariView(url: viewModel.termsOfUseURL)
                     .ignoresSafeArea()
             }
+            .alert(
+                String(localized: "error.title"),
+                isPresented: $viewModel.showPurchaseError,
+                presenting: viewModel.purchaseError
+            ) { _ in
+                Button(String(localized: "button.ok")) {
+                    viewModel.showPurchaseError = false
+                }
+            } message: { msg in
+                Text(msg)
+            }
+        }
+        .task {
+            await appEnvironment.iapService.loadProducts()
+            await appEnvironment.iapService.refreshEntitlements()
         }
     }
 
@@ -158,18 +166,36 @@ struct SettingsView: View {
                     Spacer()
 
                     Button {
-                        viewModel.purchasePremium()
+                        Task {
+                            do {
+                                try await appEnvironment.iapService.purchase()
+                            } catch {
+                                viewModel.purchaseError = error.localizedDescription
+                                viewModel.showPurchaseError = true
+                            }
+                        }
                     } label: {
-                        Text(String(localized: "settings.premium.price"))
-                            .font(.dsCallout)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(.white)
-                            .padding(.horizontal, Spacing.sm)
-                            .padding(.vertical, Spacing.xs)
-                            .background(Color.dsPrimary)
-                            .clipShape(Capsule())
+                        Group {
+                            if appEnvironment.iapService.isPurchasing {
+                                ProgressView()
+                                    .tint(.white)
+                                    .scaleEffect(0.75)
+                            } else {
+                                Text(appEnvironment.iapService.monthlyProduct?.displayPrice
+                                    ?? String(localized: "settings.premium.price"))
+                                    .font(.dsCallout)
+                                    .fontWeight(.semibold)
+                                    .foregroundStyle(.white)
+                            }
+                        }
+                        .frame(minWidth: 60)
+                        .padding(.horizontal, Spacing.sm)
+                        .padding(.vertical, Spacing.xs)
+                        .background(Color.dsPrimary)
+                        .clipShape(Capsule())
                     }
                     .buttonStyle(.plain)
+                    .disabled(appEnvironment.iapService.isPurchasing)
                 }
             }
         } header: {
