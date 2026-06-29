@@ -323,6 +323,21 @@ final class PDFToolsService: PDFConvertible {
 
     // MARK: - Extract Pages
 
+    /// Convert a VisionKit document scan into a `PDFDocument`.
+    /// Each scanned page is rendered at 200 dpi and inserted in order.
+    func scanToPDF(images: [UIImage]) async throws -> PDFDocument {
+        guard !images.isEmpty else { throw DocumentError.conversionFailed }
+        return try await Task.detached(priority: .userInitiated) {
+            let pdf = PDFDocument()
+            for image in images {
+                guard let page = PDFPage(image: image) else { continue }
+                pdf.insert(page, at: pdf.pageCount)
+            }
+            guard pdf.pageCount > 0 else { throw DocumentError.conversionFailed }
+            return pdf
+        }.value
+    }
+
     /// Extract specific pages (0-based indices) into a new `PDFDocument`.
     func extractPages(pdf url: URL, pageIndices: [Int]) async throws -> PDFDocument {
         return try await Task.detached(priority: .userInitiated) {

@@ -52,6 +52,7 @@ final class ToolsViewModel: ObservableObject {
     // MARK: State
 
     @Published var isShowingScanner = false
+    @Published var isProcessingScan = false
     @Published var isShowingFilePicker = false
     @Published var filePickerPurpose: FilePickerPurpose = .importPDF
     @Published var errorMessage: String?
@@ -284,6 +285,29 @@ final class ToolsViewModel: ObservableObject {
         }
     }
 
+    func handleScan(_ images: [UIImage], store: DocumentStore) {
+        guard !images.isEmpty else { return }
+        isProcessingScan = true
+        Task { @MainActor [weak self] in
+            guard let self else { return }
+            defer { self.isProcessingScan = false }
+            do {
+                let pdf = try await PDFToolsService.shared.scanToPDF(images: images)
+                let name = "Scan_\(Self.scanTimestamp())"
+                let doc = try store.save(pdfDocument: pdf, name: name)
+                self.pendingDestination = .documentViewer(doc)
+            } catch {
+                self.showError(error.localizedDescription)
+            }
+        }
+    }
+
+    private static func scanTimestamp() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd_HH-mm-ss"
+        return formatter.string(from: Date())
+    }
+
     func showError(_ message: String) {
         errorMessage = message
         isShowingError = true
@@ -345,7 +369,8 @@ struct ToolsView: View {
                 if VNDocumentCameraViewController.isSupported {
                     DocumentScannerView { scan in
                         viewModel.isShowingScanner = false
-                        _ = scan // hand off to workflow coordinator
+                        let images = (0..<scan.pageCount).map { scan.imageOfPage(at: $0) }
+                        viewModel.handleScan(images, store: appEnvironment.documentStore)
                     } onCancel: {
                         viewModel.isShowingScanner = false
                     }
@@ -364,6 +389,11 @@ struct ToolsView: View {
                 }
             } message: { msg in
                 Text(msg)
+            }
+        }
+        .overlay {
+            if viewModel.isProcessingScan {
+                scanProcessingOverlay
             }
         }
         .withAdBanner()
@@ -483,6 +513,25 @@ struct ToolsView: View {
                 Image(systemName: "gearshape.fill")
                     .foregroundStyle(Color.dsPrimary)
             }
+        }
+    }
+
+    // MARK: Scan-processing overlay
+
+    private var scanProcessingOverlay: some View {
+        ZStack {
+            Color.black.opacity(0.4).ignoresSafeArea()
+            VStack(spacing: Spacing.md) {
+                ProgressView()
+                    .progressViewStyle(.circular)
+                    .tint(.white)
+                    .scaleEffect(1.4)
+                Text(String(localized: "scanner.processing"))
+                    .font(.dsBody)
+                    .foregroundStyle(.white)
+            }
+            .padding(Spacing.xl)
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
         }
     }
 
