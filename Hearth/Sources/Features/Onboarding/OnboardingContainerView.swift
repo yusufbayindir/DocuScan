@@ -11,32 +11,48 @@ struct OnboardingContainerView: View {
             VStack(spacing: 0) {
                 if vm.currentStep > 0 {
                     progressBar
+                        .transition(.move(edge: .top).combined(with: .opacity))
                 }
 
-                TabView(selection: $vm.currentStep) {
-                    WelcomeScreen().tag(0)
-                    YourNameScreen(vm: vm).tag(1)
-                    PartnerNameScreen(vm: vm).tag(2)
-                    PrivacyScreen(vm: vm).tag(3)
-                    HowItWorksScreen().tag(4)
-                    TrialScreen().tag(5)
-                    ReadyScreen(vm: vm).tag(6)
+                // Use ZStack + offset instead of TabView to avoid gesture conflicts
+                GeometryReader { geo in
+                    HStack(spacing: 0) {
+                        WelcomeScreen(onAdvance: { vm.advance() })
+                            .frame(width: geo.size.width)
+
+                        YourNameScreen(vm: vm, onAdvance: { vm.advance() })
+                            .frame(width: geo.size.width)
+
+                        PartnerNameScreen(vm: vm, onAdvance: { vm.advance() })
+                            .frame(width: geo.size.width)
+
+                        PrivacyScreen(onAdvance: { vm.advance() })
+                            .frame(width: geo.size.width)
+
+                        HowItWorksScreen(onAdvance: { vm.advance() })
+                            .frame(width: geo.size.width)
+
+                        TrialScreen(onAdvance: { vm.advance() })
+                            .frame(width: geo.size.width)
+
+                        ReadyScreen(vm: vm)
+                            .frame(width: geo.size.width)
+                    }
+                    .offset(x: -CGFloat(vm.currentStep) * geo.size.width)
+                    .animation(.spring(response: 0.4, dampingFraction: 0.85), value: vm.currentStep)
                 }
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                .animation(.spring(response: 0.4, dampingFraction: 0.85), value: vm.currentStep)
             }
         }
     }
 
     private var progressBar: some View {
         HStack(spacing: 4) {
-            if vm.currentStep > 0 {
-                Button(action: { vm.back() }) {
-                    Image(systemName: "chevron.left")
-                        .font(.system(size: 16, weight: .semibold))
-                        .foregroundColor(.textSecondary)
-                        .frame(width: 36, height: 36)
-                }
+            Button(action: { vm.back() }) {
+                Image(systemName: "chevron.left")
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundColor(.textSecondary)
+                    .frame(width: 36, height: 36)
+                    .contentShape(Rectangle())
             }
             ForEach(1..<vm.totalSteps, id: \.self) { step in
                 RoundedRectangle(cornerRadius: 2)
@@ -47,12 +63,15 @@ struct OnboardingContainerView: View {
         }
         .padding(.horizontal, HS.lg)
         .padding(.top, HS.md)
+        .padding(.bottom, HS.sm)
     }
 }
 
 // MARK: - Onboarding Screens
 
 private struct WelcomeScreen: View {
+    let onAdvance: () -> Void
+
     var body: some View {
         OnboardingPage(
             emoji: "🏠",
@@ -60,13 +79,15 @@ private struct WelcomeScreen: View {
             subtitle: "Where your money comes home.\nFinance designed for couples.",
             buttonLabel: "Get Started",
             showSkip: false,
-            action: {}
+            action: onAdvance
         )
     }
 }
 
 private struct YourNameScreen: View {
     @Bindable var vm: OnboardingViewModel
+    let onAdvance: () -> Void
+
     var body: some View {
         OnboardingInputPage(
             emoji: "👋",
@@ -76,13 +97,15 @@ private struct YourNameScreen: View {
             text: $vm.yourName,
             buttonLabel: "Continue",
             canAdvance: vm.canAdvance,
-            action: { vm.advance() }
+            action: onAdvance
         )
     }
 }
 
 private struct PartnerNameScreen: View {
     @Bindable var vm: OnboardingViewModel
+    let onAdvance: () -> Void
+
     var body: some View {
         OnboardingInputPage(
             emoji: "💑",
@@ -92,13 +115,14 @@ private struct PartnerNameScreen: View {
             text: $vm.partnerName,
             buttonLabel: "Continue",
             canAdvance: vm.canAdvance,
-            action: { vm.advance() }
+            action: onAdvance
         )
     }
 }
 
 private struct PrivacyScreen: View {
-    @Bindable var vm: OnboardingViewModel
+    let onAdvance: () -> Void
+
     var body: some View {
         OnboardingPage(
             emoji: "🔒",
@@ -106,16 +130,13 @@ private struct PrivacyScreen: View {
             subtitle: "Choose which accounts to share, how much to reveal, and what stays private. Change anytime.",
             buttonLabel: "Sounds good",
             showSkip: false,
-            action: { vm.advance() }
+            action: onAdvance
         )
     }
 }
 
 private struct HowItWorksScreen: View {
-    @Environment(AppState.self) private var appState
-    @State private var vm: OnboardingViewModel?
-
-    init() {}
+    let onAdvance: () -> Void
 
     var body: some View {
         VStack(spacing: HS.xl) {
@@ -126,20 +147,18 @@ private struct HowItWorksScreen: View {
                 .foregroundColor(.textPrimary)
 
             VStack(alignment: .leading, spacing: HS.lg) {
-                featureRow(icon: "chart.bar.fill",   color: .hearthTerracotta, text: "See all your accounts in one place")
-                featureRow(icon: "arrow.triangle.branch", color: .hearthAmber,     text: "Split expenses fairly, automatically")
-                featureRow(icon: "target",            color: .semanticSuccessFg, text: "Save toward shared goals together")
-                featureRow(icon: "brain.head.profile", color: .hearthDustyRose,  text: "AI coach spots savings opportunities")
+                featureRow(icon: "chart.bar.fill",     color: .hearthTerracotta,  text: "See all your accounts in one place")
+                featureRow(icon: "arrow.triangle.branch", color: .hearthAmber,   text: "Split expenses fairly, automatically")
+                featureRow(icon: "target",             color: .semanticSuccessFg, text: "Save toward shared goals together")
+                featureRow(icon: "brain.head.profile", color: .hearthDustyRose,   text: "AI coach spots savings opportunities")
             }
             .padding(.horizontal, HS.xl)
 
             Spacer()
 
-            HearthPrimaryButton(title: "Next") {
-                // advance handled by container's TabView
-            }
-            .padding(.horizontal, HS.lg)
-            .padding(.bottom, HS.xl)
+            HearthPrimaryButton(title: "Next", action: onAdvance)
+                .padding(.horizontal, HS.lg)
+                .padding(.bottom, HS.xl)
         }
     }
 
@@ -159,6 +178,8 @@ private struct HowItWorksScreen: View {
 }
 
 private struct TrialScreen: View {
+    let onAdvance: () -> Void
+
     var body: some View {
         OnboardingPage(
             emoji: "✨",
@@ -166,7 +187,7 @@ private struct TrialScreen: View {
             subtitle: "Try Hearth Premium free for 14 days.\nAll features unlocked, no commitment.",
             buttonLabel: "Start Free Trial",
             showSkip: true,
-            action: {}
+            action: onAdvance
         )
     }
 }
@@ -179,7 +200,7 @@ private struct ReadyScreen: View {
         VStack(spacing: HS.xl) {
             Spacer()
             Text("🎉").font(.system(size: 72))
-            Text("You're all set, \(vm.yourName.isEmpty ? "there" : vm.yourName)!")
+            Text("You're all set\(vm.yourName.isEmpty ? "" : ", \(vm.yourName)")!")
                 .font(.hearthTitle1)
                 .foregroundColor(.textPrimary)
                 .multilineTextAlignment(.center)
@@ -226,7 +247,7 @@ private struct OnboardingPage: View {
             VStack(spacing: HS.md) {
                 HearthPrimaryButton(title: buttonLabel, action: action)
                 if showSkip {
-                    Button("Maybe later") {}
+                    Button("Maybe later", action: action)
                         .font(.hearthFootnote)
                         .foregroundColor(.textTertiary)
                 }
@@ -246,6 +267,7 @@ private struct OnboardingInputPage: View {
     let buttonLabel: String
     let canAdvance: Bool
     let action: () -> Void
+    @FocusState private var isFocused: Bool
 
     var body: some View {
         VStack(spacing: HS.xl) {
@@ -269,8 +291,12 @@ private struct OnboardingInputPage: View {
                 .padding(HS.lg)
                 .background(Color.backgroundCard)
                 .clipShape(RoundedRectangle(cornerRadius: HR.lg))
-                .overlay(RoundedRectangle(cornerRadius: HR.lg).stroke(Color.borderDefault, lineWidth: 1))
+                .overlay(RoundedRectangle(cornerRadius: HR.lg).stroke(isFocused ? Color.hearthTerracotta : Color.borderDefault, lineWidth: isFocused ? 2 : 1))
                 .padding(.horizontal, HS.lg)
+                .focused($isFocused)
+                .submitLabel(.done)
+                .onSubmit { if canAdvance { action() } }
+                .onAppear { isFocused = true }
 
             Spacer()
             HearthPrimaryButton(title: buttonLabel, isDisabled: !canAdvance, action: action)

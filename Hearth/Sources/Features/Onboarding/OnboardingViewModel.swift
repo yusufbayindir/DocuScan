@@ -35,14 +35,14 @@ final class OnboardingViewModel {
     }
 
     func completeOnboarding(appState: AppState) {
-        appState.currentUser.name = yourName.isEmpty ? "Alex" : yourName
-        appState.partner = Partner(
-            id: UUID(),
-            name: partnerName.isEmpty ? "Jordan" : partnerName,
-            email: partnerEmail,
-            isPartnerA: false
-        )
+        // Setup mock data first, then override with the names the user actually typed
         MockDataService.setupAppState(appState)
+        appState.currentUser.name = yourName.isEmpty ? appState.currentUser.name : yourName
+        if var partner = appState.partner {
+            partner.name = partnerName.isEmpty ? partner.name : partnerName
+            partner.email = partnerEmail.isEmpty ? partner.email : partnerEmail
+            appState.partner = partner
+        }
         appState.isOnboarded = true
     }
 }
