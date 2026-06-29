@@ -20,7 +20,7 @@ struct FavoritesView: View {
             .navigationTitle(String(localized: "favorites.title"))
             .navigationBarTitleDisplayMode(.large)
             .navigationDestination(for: DocuScanDocument.self) { document in
-                DocumentViewerView(document: document)
+                DocumentViewerView(source: .saved(document))
             }
         }
         .withAdBanner()
