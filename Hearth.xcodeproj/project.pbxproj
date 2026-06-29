@@ -1,0 +1,619 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA000001 /* HearthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000001 /* HearthApp.swift */; };
+		AA000002 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000002 /* RootView.swift */; };
+		AA000003 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000003 /* MainTabView.swift */; };
+		AA000010 /* Color+Hearth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000010 /* Color+Hearth.swift */; };
+		AA000011 /* Typography+Hearth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000011 /* Typography+Hearth.swift */; };
+		AA000012 /* View+Hearth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000012 /* View+Hearth.swift */; };
+		AA000020 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000020 /* Models.swift */; };
+		AA000021 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000021 /* AppState.swift */; };
+		AA000030 /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000030 /* MockDataService.swift */; };
+		AA000040 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000040 /* PrimaryButton.swift */; };
+		AA000041 /* PartnerAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000041 /* PartnerAvatar.swift */; };
+		AA000042 /* AmountDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000042 /* AmountDisplay.swift */; };
+		AA000043 /* CategoryChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000043 /* CategoryChip.swift */; };
+		AA000044 /* PrivacyBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000044 /* PrivacyBadge.swift */; };
+		AA000045 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000045 /* SectionHeader.swift */; };
+		AA000046 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000046 /* ProgressBar.swift */; };
+		AA000047 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000047 /* TransactionRow.swift */; };
+		AA000048 /* AccountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000048 /* AccountCard.swift */; };
+		AA000049 /* GoalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000049 /* GoalCard.swift */; };
+		AA000050 /* AICoachCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000050 /* AICoachCard.swift */; };
+		AA000051 /* BillCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000051 /* BillCard.swift */; };
+		AA000060 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000060 /* OnboardingViewModel.swift */; };
+		AA000061 /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000061 /* OnboardingContainerView.swift */; };
+		AA000070 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000070 /* HomeViewModel.swift */; };
+		AA000071 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000071 /* HomeView.swift */; };
+		AA000072 /* AccountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000072 /* AccountDetailView.swift */; };
+		AA000073 /* MoneyDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000073 /* MoneyDateView.swift */; };
+		AA000080 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000080 /* TransactionViewModel.swift */; };
+		AA000081 /* TransactionFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000081 /* TransactionFeedView.swift */; };
+		AA000082 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000082 /* TransactionDetailView.swift */; };
+		AA000083 /* SplitExpenseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000083 /* SplitExpenseSheet.swift */; };
+		AA000084 /* SubscriptionHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000084 /* SubscriptionHubView.swift */; };
+		AA000090 /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000090 /* GoalViewModel.swift */; };
+		AA000091 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000091 /* GoalsView.swift */; };
+		AA000092 /* GoalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000092 /* GoalDetailView.swift */; };
+		AA000093 /* CreateGoalSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000093 /* CreateGoalSheet.swift */; };
+		AA000100 /* InsightsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000100 /* InsightsViewModel.swift */; };
+		AA000101 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000101 /* InsightsView.swift */; };
+		AA000102 /* CategoryDiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000102 /* CategoryDiveView.swift */; };
+		AA000103 /* MonthlyReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000103 /* MonthlyReportView.swift */; };
+		AA000104 /* AICoachDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000104 /* AICoachDetailView.swift */; };
+		AA000110 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000110 /* SettingsView.swift */; };
+		AA000111 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000111 /* ProfileView.swift */; };
+		AA000112 /* AccountManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000112 /* AccountManagementView.swift */; };
+		AA000113 /* NotificationPrefsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000113 /* NotificationPrefsView.swift */; };
+		AA000114 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000114 /* PaywallView.swift */; };
+		AA000200 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA000200 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FA000001 /* HearthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearthApp.swift; sourceTree = "<group>"; };
+		FA000002 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		FA000003 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		FA000010 /* Color+Hearth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hearth.swift"; sourceTree = "<group>"; };
+		FA000011 /* Typography+Hearth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Typography+Hearth.swift"; sourceTree = "<group>"; };
+		FA000012 /* View+Hearth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Hearth.swift"; sourceTree = "<group>"; };
+		FA000020 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		FA000021 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		FA000030 /* MockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService.swift; sourceTree = "<group>"; };
+		FA000040 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		FA000041 /* PartnerAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerAvatar.swift; sourceTree = "<group>"; };
+		FA000042 /* AmountDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountDisplay.swift; sourceTree = "<group>"; };
+		FA000043 /* CategoryChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryChip.swift; sourceTree = "<group>"; };
+		FA000044 /* PrivacyBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyBadge.swift; sourceTree = "<group>"; };
+		FA000045 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		FA000046 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		FA000047 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
+		FA000048 /* AccountCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCard.swift; sourceTree = "<group>"; };
+		FA000049 /* GoalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCard.swift; sourceTree = "<group>"; };
+		FA000050 /* AICoachCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICoachCard.swift; sourceTree = "<group>"; };
+		FA000051 /* BillCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillCard.swift; sourceTree = "<group>"; };
+		FA000060 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		FA000061 /* OnboardingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerView.swift; sourceTree = "<group>"; };
+		FA000070 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FA000071 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FA000072 /* AccountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailView.swift; sourceTree = "<group>"; };
+		FA000073 /* MoneyDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyDateView.swift; sourceTree = "<group>"; };
+		FA000080 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		FA000081 /* TransactionFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFeedView.swift; sourceTree = "<group>"; };
+		FA000082 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
+		FA000083 /* SplitExpenseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitExpenseSheet.swift; sourceTree = "<group>"; };
+		FA000084 /* SubscriptionHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionHubView.swift; sourceTree = "<group>"; };
+		FA000090 /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
+		FA000091 /* GoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
+		FA000092 /* GoalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailView.swift; sourceTree = "<group>"; };
+		FA000093 /* CreateGoalSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalSheet.swift; sourceTree = "<group>"; };
+		FA000100 /* InsightsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsViewModel.swift; sourceTree = "<group>"; };
+		FA000101 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
+		FA000102 /* CategoryDiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDiveView.swift; sourceTree = "<group>"; };
+		FA000103 /* MonthlyReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyReportView.swift; sourceTree = "<group>"; };
+		FA000104 /* AICoachDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICoachDetailView.swift; sourceTree = "<group>"; };
+		FA000110 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FA000111 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		FA000112 /* AccountManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagementView.swift; sourceTree = "<group>"; };
+		FA000113 /* NotificationPrefsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPrefsView.swift; sourceTree = "<group>"; };
+		FA000114 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		FA000200 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA000201 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA000300 /* Hearth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hearth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		GG000000 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				GG000001 /* Hearth */,
+				GG000099 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		GG000001 /* Hearth */ = {
+			isa = PBXGroup;
+			children = (
+				GG000010 /* Sources */,
+				GG000090 /* Resources */,
+			);
+			name = Hearth;
+			path = Hearth;
+			sourceTree = "<group>";
+		};
+		GG000010 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				GG000011 /* App */,
+				GG000012 /* Extensions */,
+				GG000013 /* Models */,
+				GG000014 /* Services */,
+				GG000015 /* Components */,
+				GG000016 /* Features */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		GG000011 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FA000001 /* HearthApp.swift */,
+				FA000002 /* RootView.swift */,
+				FA000003 /* MainTabView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		GG000012 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA000010 /* Color+Hearth.swift */,
+				FA000011 /* Typography+Hearth.swift */,
+				FA000012 /* View+Hearth.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		GG000013 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA000020 /* Models.swift */,
+				FA000021 /* AppState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		GG000014 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FA000030 /* MockDataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		GG000015 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FA000040 /* PrimaryButton.swift */,
+				FA000041 /* PartnerAvatar.swift */,
+				FA000042 /* AmountDisplay.swift */,
+				FA000043 /* CategoryChip.swift */,
+				FA000044 /* PrivacyBadge.swift */,
+				FA000045 /* SectionHeader.swift */,
+				FA000046 /* ProgressBar.swift */,
+				FA000047 /* TransactionRow.swift */,
+				FA000048 /* AccountCard.swift */,
+				FA000049 /* GoalCard.swift */,
+				FA000050 /* AICoachCard.swift */,
+				FA000051 /* BillCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		GG000016 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				GG000020 /* Onboarding */,
+				GG000021 /* Home */,
+				GG000022 /* Transactions */,
+				GG000023 /* Goals */,
+				GG000024 /* Insights */,
+				GG000025 /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		GG000020 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				FA000060 /* OnboardingViewModel.swift */,
+				FA000061 /* OnboardingContainerView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		GG000021 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FA000070 /* HomeViewModel.swift */,
+				FA000071 /* HomeView.swift */,
+				FA000072 /* AccountDetailView.swift */,
+				FA000073 /* MoneyDateView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		GG000022 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				FA000080 /* TransactionViewModel.swift */,
+				FA000081 /* TransactionFeedView.swift */,
+				FA000082 /* TransactionDetailView.swift */,
+				FA000083 /* SplitExpenseSheet.swift */,
+				FA000084 /* SubscriptionHubView.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		GG000023 /* Goals */ = {
+			isa = PBXGroup;
+			children = (
+				FA000090 /* GoalViewModel.swift */,
+				FA000091 /* GoalsView.swift */,
+				FA000092 /* GoalDetailView.swift */,
+				FA000093 /* CreateGoalSheet.swift */,
+			);
+			path = Goals;
+			sourceTree = "<group>";
+		};
+		GG000024 /* Insights */ = {
+			isa = PBXGroup;
+			children = (
+				FA000100 /* InsightsViewModel.swift */,
+				FA000101 /* InsightsView.swift */,
+				FA000102 /* CategoryDiveView.swift */,
+				FA000103 /* MonthlyReportView.swift */,
+				FA000104 /* AICoachDetailView.swift */,
+			);
+			path = Insights;
+			sourceTree = "<group>";
+		};
+		GG000025 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FA000110 /* SettingsView.swift */,
+				FA000111 /* ProfileView.swift */,
+				FA000112 /* AccountManagementView.swift */,
+				FA000113 /* NotificationPrefsView.swift */,
+				FA000114 /* PaywallView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		GG000090 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA000200 /* Assets.xcassets */,
+				FA000201 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		GG000099 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA000300 /* Hearth.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		TT000001 /* Hearth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = XC000002 /* Build configuration list for PBXNativeTarget "Hearth" */;
+			buildPhases = (
+				BB000002 /* Sources */,
+				BB000001 /* Frameworks */,
+				BB000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hearth;
+			productName = Hearth;
+			productReference = FA000300 /* Hearth.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		PP000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					TT000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = XC000001 /* Build configuration list for PBXProject "Hearth" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = GG000000;
+			productRefGroup = GG000099 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				TT000001 /* Hearth */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA000200 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA000001 /* HearthApp.swift in Sources */,
+				AA000002 /* RootView.swift in Sources */,
+				AA000003 /* MainTabView.swift in Sources */,
+				AA000010 /* Color+Hearth.swift in Sources */,
+				AA000011 /* Typography+Hearth.swift in Sources */,
+				AA000012 /* View+Hearth.swift in Sources */,
+				AA000020 /* Models.swift in Sources */,
+				AA000021 /* AppState.swift in Sources */,
+				AA000030 /* MockDataService.swift in Sources */,
+				AA000040 /* PrimaryButton.swift in Sources */,
+				AA000041 /* PartnerAvatar.swift in Sources */,
+				AA000042 /* AmountDisplay.swift in Sources */,
+				AA000043 /* CategoryChip.swift in Sources */,
+				AA000044 /* PrivacyBadge.swift in Sources */,
+				AA000045 /* SectionHeader.swift in Sources */,
+				AA000046 /* ProgressBar.swift in Sources */,
+				AA000047 /* TransactionRow.swift in Sources */,
+				AA000048 /* AccountCard.swift in Sources */,
+				AA000049 /* GoalCard.swift in Sources */,
+				AA000050 /* AICoachCard.swift in Sources */,
+				AA000051 /* BillCard.swift in Sources */,
+				AA000060 /* OnboardingViewModel.swift in Sources */,
+				AA000061 /* OnboardingContainerView.swift in Sources */,
+				AA000070 /* HomeViewModel.swift in Sources */,
+				AA000071 /* HomeView.swift in Sources */,
+				AA000072 /* AccountDetailView.swift in Sources */,
+				AA000073 /* MoneyDateView.swift in Sources */,
+				AA000080 /* TransactionViewModel.swift in Sources */,
+				AA000081 /* TransactionFeedView.swift in Sources */,
+				AA000082 /* TransactionDetailView.swift in Sources */,
+				AA000083 /* SplitExpenseSheet.swift in Sources */,
+				AA000084 /* SubscriptionHubView.swift in Sources */,
+				AA000090 /* GoalViewModel.swift in Sources */,
+				AA000091 /* GoalsView.swift in Sources */,
+				AA000092 /* GoalDetailView.swift in Sources */,
+				AA000093 /* CreateGoalSheet.swift in Sources */,
+				AA000100 /* InsightsViewModel.swift in Sources */,
+				AA000101 /* InsightsView.swift in Sources */,
+				AA000102 /* CategoryDiveView.swift in Sources */,
+				AA000103 /* MonthlyReportView.swift in Sources */,
+				AA000104 /* AICoachDetailView.swift in Sources */,
+				AA000110 /* SettingsView.swift in Sources */,
+				AA000111 /* ProfileView.swift in Sources */,
+				AA000112 /* AccountManagementView.swift in Sources */,
+				AA000113 /* NotificationPrefsView.swift in Sources */,
+				AA000114 /* PaywallView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		XC000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		XC000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		XC000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Hearth/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearth.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		XC000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Hearth/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hearth.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		XC000001 /* Build configuration list for PBXProject "Hearth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				XC000003 /* Debug */,
+				XC000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		XC000002 /* Build configuration list for PBXNativeTarget "Hearth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				XC000005 /* Debug */,
+				XC000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = PP000001 /* Project object */;
+}
