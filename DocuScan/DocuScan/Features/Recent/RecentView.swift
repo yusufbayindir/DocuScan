@@ -1,15 +1,5 @@
 import SwiftUI
 
-// MARK: - DocumentViewerView (stub)
-
-struct DocumentViewerView: View {
-    let document: DocuScanDocument
-
-    var body: some View {
-        EmptyView()
-    }
-}
-
 // MARK: - RecentView
 
 struct RecentView: View {
@@ -44,7 +34,7 @@ struct RecentView: View {
                 }
             )
             .navigationDestination(for: DocuScanDocument.self) { document in
-                DocumentViewerView(document: document)
+                DocumentViewerView(source: .saved(document))
             }
         }
         .withAdBanner()

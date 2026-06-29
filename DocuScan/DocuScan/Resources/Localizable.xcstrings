@@ -1,10 +1,1640 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "tab.tools" : {"localizations": {"en": {"stringUnit": {"state": "translated", "value": "Tools"}}, "tr": {"stringUnit": {"state": "translated", "value": "Araçlar"}}, "fr": {"stringUnit": {"state": "translated", "value": "Outils"}}, "zh-Hans": {"stringUnit": {"state": "translated", "value": "工具"}}, "de": {"stringUnit": {"state": "translated", "value": "Werkzeuge"}}, "ja": {"stringUnit": {"state": "translated", "value": "ツール"}}, "ar": {"stringUnit": {"state": "translated", "value": "الأدوات"}}}},
-    "tab.recent" : {"localizations": {"en": {"stringUnit": {"state": "translated", "value": "Recent"}}, "tr": {"stringUnit": {"state": "translated", "value": "Son"}}, "fr": {"stringUnit": {"state": "translated", "value": "Récent"}}, "zh-Hans": {"stringUnit": {"state": "translated", "value": "最近"}}, "de": {"stringUnit": {"state": "translated", "value": "Zuletzt"}}, "ja": {"stringUnit": {"state": "translated", "value": "最近"}}, "ar": {"stringUnit": {"state": "translated", "value": "الأخيرة"}}}},
-    "tab.favorites" : {"localizations": {"en": {"stringUnit": {"state": "translated", "value": "Favorites"}}, "tr": {"stringUnit": {"state": "translated", "value": "Favoriler"}}, "fr": {"stringUnit": {"state": "translated", "value": "Favoris"}}, "zh-Hans": {"stringUnit": {"state": "translated", "value": "收藏"}}, "de": {"stringUnit": {"state": "translated", "value": "Favoriten"}}, "ja": {"stringUnit": {"state": "translated", "value": "お気に入り"}}, "ar": {"stringUnit": {"state": "translated", "value": "المفضلة"}}}},
-    "tab.settings" : {"localizations": {"en": {"stringUnit": {"state": "translated", "value": "Settings"}}, "tr": {"stringUnit": {"state": "translated", "value": "Ayarlar"}}, "fr": {"stringUnit": {"state": "translated", "value": "Paramètres"}}, "zh-Hans": {"stringUnit": {"state": "translated", "value": "设置"}}, "de": {"stringUnit": {"state": "translated", "value": "Einstellungen"}}, "ja": {"stringUnit": {"state": "translated", "value": "設定"}}, "ar": {"stringUnit": {"state": "translated", "value": "الإعدادات"}}}}
+  "sourceLanguage": "en",
+  "strings": {
+    "tab.tools": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tools"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Araçlar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Outils"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "工具"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Werkzeuge"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ツール"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الأدوات"
+          }
+        }
+      }
+    },
+    "tab.recent": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recent"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Récent"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最近"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zuletzt"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最近"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الأخيرة"
+          }
+        }
+      }
+    },
+    "tab.favorites": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favorites"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favoriler"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favoris"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "收藏"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favoriten"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "お気に入り"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المفضلة"
+          }
+        }
+      }
+    },
+    "tab.settings": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarlar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paramètres"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设置"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einstellungen"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "設定"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الإعدادات"
+          }
+        }
+      }
+    },
+    "button.ok": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "button.cancel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        }
+      }
+    },
+    "button.close": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
+          }
+        }
+      }
+    },
+    "error.title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Error"
+          }
+        }
+      }
+    },
+    "common.ok": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "error.conversion_failed": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conversion Failed"
+          }
+        }
+      }
+    },
+    "error.feature_coming_soon": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This feature is coming soon"
+          }
+        }
+      }
+    },
+    "app.name": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DocuScan"
+          }
+        }
+      }
+    },
+    "recent.title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recent"
+          }
+        }
+      }
+    },
+    "recent.empty.title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Documents Yet"
+          }
+        }
+      }
+    },
+    "recent.empty.subtitle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import or scan a PDF to get started"
+          }
+        }
+      }
+    },
+    "recent.swipe.delete": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete"
+          }
+        }
+      }
+    },
+    "recent.delete_error.title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Could not delete document"
+          }
+        }
+      }
+    },
+    "favorites.title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favorites"
+          }
+        }
+      }
+    },
+    "favorites.empty.title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Favorites Yet"
+          }
+        }
+      }
+    },
+    "favorites.empty.subtitle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Star a document to add it to favorites"
+          }
+        }
+      }
+    },
+    "favorites.swipe.remove": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unfavorite"
+          }
+        }
+      }
+    },
+    "settings.title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
+          }
+        }
+      }
+    },
+    "settings.section.premium": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium"
+          }
+        }
+      }
+    },
+    "settings.section.app": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App"
+          }
+        }
+      }
+    },
+    "settings.section.legal": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Legal"
+          }
+        }
+      }
+    },
+    "settings.section.about": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About"
+          }
+        }
+      }
+    },
+    "settings.premium.active_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium Active"
+          }
+        }
+      }
+    },
+    "settings.premium.active_badge": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium"
+          }
+        }
+      }
+    },
+    "settings.premium.remove_ads_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove Ads & Unlock All"
+          }
+        }
+      }
+    },
+    "settings.premium.remove_ads_subtitle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlimited exports, no watermarks"
+          }
+        }
+      }
+    },
+    "settings.premium.price": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "9.99"
+          }
+        }
+      }
+    },
+    "settings.app.rate_us": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rate DocuScan"
+          }
+        }
+      }
+    },
+    "settings.app.share": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share App"
+          }
+        }
+      }
+    },
+    "settings.app.language": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Language"
+          }
+        }
+      }
+    },
+    "settings.legal.privacy_policy": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacy Policy"
+          }
+        }
+      }
+    },
+    "settings.legal.terms_of_use": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terms of Use"
+          }
+        }
+      }
+    },
+    "settings.about.app_name": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DocuScan"
+          }
+        }
+      }
+    },
+    "section.all_tools": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All Tools"
+          }
+        }
+      }
+    },
+    "quick_action.scan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan"
+          }
+        }
+      }
+    },
+    "quick_action.import": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import"
+          }
+        }
+      }
+    },
+    "scanner.unavailable": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Camera scanner is not available on this device"
+          }
+        }
+      }
+    },
+    "merge.navigation_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Merge PDFs"
+          }
+        }
+      }
+    },
+    "merge.file_count_singular": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 file selected"
+          }
+        }
+      }
+    },
+    "merge.add_more_pdfs": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add More PDFs"
+          }
+        }
+      }
+    },
+    "merge.merge_button": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Merge"
+          }
+        }
+      }
+    },
+    "merge.processing": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Merging…"
+          }
+        }
+      }
+    },
+    "split_tool.nav_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Split PDF"
+          }
+        }
+      }
+    },
+    "split_tool.source_file_label": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Source File"
+          }
+        }
+      }
+    },
+    "split_tool.range_section_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Page Ranges"
+          }
+        }
+      }
+    },
+    "split_tool.range_hint": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter ranges separated by commas, e.g. 1-3, 5"
+          }
+        }
+      }
+    },
+    "split_tool.range_placeholder": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. 1-3, 5"
+          }
+        }
+      }
+    },
+    "split_tool.split_button": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Split"
+          }
+        }
+      }
+    },
+    "split_tool.processing": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Splitting…"
+          }
+        }
+      }
+    },
+    "split_tool.results_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Split Results"
+          }
+        }
+      }
+    },
+    "split_tool.loading_pages": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading pages…"
+          }
+        }
+      }
+    },
+    "split_tool.error.empty_input": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please enter at least one page range"
+          }
+        }
+      }
+    },
+    "split_tool.error.page_below_one": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Page numbers must be 1 or greater"
+          }
+        }
+      }
+    },
+    "compress.nav_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compress PDF"
+          }
+        }
+      }
+    },
+    "compress.quality_label": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quality"
+          }
+        }
+      }
+    },
+    "compress.quality.low": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Low"
+          }
+        }
+      }
+    },
+    "compress.quality.medium": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medium"
+          }
+        }
+      }
+    },
+    "compress.quality.high": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "High"
+          }
+        }
+      }
+    },
+    "compress.quality.low.description": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Smallest file size, reduced image quality"
+          }
+        }
+      }
+    },
+    "compress.quality.medium.description": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Balanced compression and quality"
+          }
+        }
+      }
+    },
+    "compress.quality.high.description": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Best quality, larger file size"
+          }
+        }
+      }
+    },
+    "compress.button": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compress"
+          }
+        }
+      }
+    },
+    "compress.processing": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compressing…"
+          }
+        }
+      }
+    },
+    "compress.result.title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compression Complete"
+          }
+        }
+      }
+    },
+    "compress.result.before": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Before"
+          }
+        }
+      }
+    },
+    "compress.result.after": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After"
+          }
+        }
+      }
+    },
+    "compress.action.view": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "View PDF"
+          }
+        }
+      }
+    },
+    "compress.action.share": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share"
+          }
+        }
+      }
+    },
+    "rotate.nav_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rotate PDF"
+          }
+        }
+      }
+    },
+    "rotate.rotation_amount_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rotation Amount"
+          }
+        }
+      }
+    },
+    "rotate.page_selection_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Page Selection"
+          }
+        }
+      }
+    },
+    "rotate.all_pages": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All Pages"
+          }
+        }
+      }
+    },
+    "rotate.specific_pages": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Specific Pages"
+          }
+        }
+      }
+    },
+    "rotate.enter_pages_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Page Numbers"
+          }
+        }
+      }
+    },
+    "rotate.enter_pages_hint": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter pages or ranges, e.g. 1, 3, 5-7"
+          }
+        }
+      }
+    },
+    "rotate.pages_placeholder": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. 1-3, 5"
+          }
+        }
+      }
+    },
+    "rotate.action_button": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rotate"
+          }
+        }
+      }
+    },
+    "rotate.loading_pages": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading…"
+          }
+        }
+      }
+    },
+    "rotate.error_no_pages": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No pages found in this document"
+          }
+        }
+      }
+    },
+    "protect.source.label": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "File to Protect"
+          }
+        }
+      }
+    },
+    "protect.password.label": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Password"
+          }
+        }
+      }
+    },
+    "protect.password.placeholder": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter password"
+          }
+        }
+      }
+    },
+    "protect.strength.weak": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weak"
+          }
+        }
+      }
+    },
+    "protect.strength.medium": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medium"
+          }
+        }
+      }
+    },
+    "protect.strength.strong": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strong"
+          }
+        }
+      }
+    },
+    "protect.success.title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF Protected"
+          }
+        }
+      }
+    },
+    "protect.success.subtitle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your PDF is now password protected"
+          }
+        }
+      }
+    },
+    "unlock_tool.nav_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock PDF"
+          }
+        }
+      }
+    },
+    "unlock_tool.file_label": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Protected File"
+          }
+        }
+      }
+    },
+    "unlock_tool.password_section_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Password"
+          }
+        }
+      }
+    },
+    "unlock_tool.password_section_subtitle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter the document password to unlock"
+          }
+        }
+      }
+    },
+    "unlock_tool.password_placeholder": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter password"
+          }
+        }
+      }
+    },
+    "unlock_tool.protected_badge": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Protected"
+          }
+        }
+      }
+    },
+    "unlock_tool.button.unlock": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock"
+          }
+        }
+      }
+    },
+    "unlock_tool.button.processing": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlocking…"
+          }
+        }
+      }
+    },
+    "unlock_tool.error.general_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock Failed"
+          }
+        }
+      }
+    },
+    "unlock_tool.error.wrong_password": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wrong password. Please try again."
+          }
+        }
+      }
+    },
+    "unlock_tool.success.title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF Unlocked"
+          }
+        }
+      }
+    },
+    "unlock_tool.success.subtitle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your PDF is now unlocked"
+          }
+        }
+      }
+    },
+    "extract_pages.nav_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extract Pages"
+          }
+        }
+      }
+    },
+    "extract_pages.input_section_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pages to Extract"
+          }
+        }
+      }
+    },
+    "extract_pages.input_hint": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter page numbers or ranges, e.g. 1, 3, 5-7"
+          }
+        }
+      }
+    },
+    "extract_pages.input_placeholder": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. 1, 3-5"
+          }
+        }
+      }
+    },
+    "extract_pages.loading_pages": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading document…"
+          }
+        }
+      }
+    },
+    "extract_pages.parse_error": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invalid page range"
+          }
+        }
+      }
+    },
+    "extract_pages.button_extract": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extract Pages"
+          }
+        }
+      }
+    },
+    "extract_pages.button_processing": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extracting…"
+          }
+        }
+      }
+    },
+    "images_to_pdf.navigation_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Images to PDF"
+          }
+        }
+      }
+    },
+    "images_to_pdf.empty_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Images Added"
+          }
+        }
+      }
+    },
+    "images_to_pdf.empty_subtitle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap the button below to add images"
+          }
+        }
+      }
+    },
+    "images_to_pdf.add_images_button": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add Images"
+          }
+        }
+      }
+    },
+    "images_to_pdf.add_more_button": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add More"
+          }
+        }
+      }
+    },
+    "images_to_pdf.remove_image": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove"
+          }
+        }
+      }
+    },
+    "images_to_pdf.order_hint": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drag to reorder"
+          }
+        }
+      }
+    },
+    "images_to_pdf.convert_button": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Convert to PDF"
+          }
+        }
+      }
+    },
+    "images_to_pdf.converting": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Converting…"
+          }
+        }
+      }
+    },
+    "images_to_pdf.default_filename": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Images PDF"
+          }
+        }
+      }
+    },
+    "convert_to_pdf.nav_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Convert to PDF"
+          }
+        }
+      }
+    },
+    "convert_to_pdf.explanation": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Convert Word or Excel documents to PDF format"
+          }
+        }
+      }
+    },
+    "convert_to_pdf.button_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Convert"
+          }
+        }
+      }
+    },
+    "convert_to_pdf.converting": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Converting…"
+          }
+        }
+      }
+    },
+    "convert_to_pdf.unsupported_type": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unsupported file type"
+          }
+        }
+      }
+    },
+    "viewer.document_unavailable": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Document Unavailable"
+          }
+        }
+      }
+    },
+    "viewer.saved_confirmation": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved to Library"
+          }
+        }
+      }
+    },
+    "viewer.toolbar.save": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save"
+          }
+        }
+      }
+    },
+    "viewer.toolbar.share": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share"
+          }
+        }
+      }
+    },
+    "onboarding.button.get_started": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get Started"
+          }
+        }
+      }
+    },
+    "onboarding.button.next": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next"
+          }
+        }
+      }
+    },
+    "onboarding.button.skip": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip"
+          }
+        }
+      }
+    },
+    "onboarding.camera_scan.title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan Documents"
+          }
+        }
+      }
+    },
+    "onboarding.camera_scan.subtitle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use your camera to scan any document instantly"
+          }
+        }
+      }
+    },
+    "onboarding.tracking.title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Help Us Improve"
+          }
+        }
+      }
+    },
+    "onboarding.tracking.subtitle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allow personalized ads to support the free version of DocuScan"
+          }
+        }
+      }
+    },
+    "onboarding.tracking.footer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You can change this anytime in iOS Settings"
+          }
+        }
+      }
+    },
+    "onboarding.tracking.button.continue": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue"
+          }
+        }
+      }
+    },
+    "onboarding.paywall.title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock DocuScan Premium"
+          }
+        }
+      }
+    },
+    "onboarding.paywall.subtitle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlimited access to all PDF tools"
+          }
+        }
+      }
+    },
+    "onboarding.paywall.price": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "9.99"
+          }
+        }
+      }
+    },
+    "onboarding.paywall.price_label": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "per month"
+          }
+        }
+      }
+    },
+    "onboarding.paywall.price_period": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "/mo"
+          }
+        }
+      }
+    },
+    "onboarding.paywall.button.buy": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get Premium"
+          }
+        }
+      }
+    },
+    "onboarding.paywall.button.restore": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore Purchase"
+          }
+        }
+      }
+    },
+    "onboarding.paywall.button.skip": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue Free"
+          }
+        }
+      }
+    },
+    "onboarding.value_prop.subtitle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All PDF tools, one app"
+          }
+        }
+      }
+    },
+    "onboarding.value_prop.legal_note": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacy Policy · Terms of Use"
+          }
+        }
+      }
+    }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }

@@ -29,6 +29,21 @@ struct PDFTool: Identifiable {
     }
 }
 
+// MARK: - ToolDestination
+
+enum ToolDestination: Hashable {
+    case merge([URL])
+    case split(URL)
+    case compress(URL)
+    case rotate(URL)
+    case protect(URL)
+    case unlock(URL)
+    case extractPages(URL)
+    case imagesToPDF([URL])
+    case convertToPDF(URL)
+    case documentViewer(DocuScanDocument)
+}
+
 // MARK: - ToolsViewModel
 
 @MainActor
@@ -41,6 +56,8 @@ final class ToolsViewModel: ObservableObject {
     @Published var filePickerPurpose: FilePickerPurpose = .importPDF
     @Published var errorMessage: String?
     @Published var isShowingError = false
+    @Published var navigationPath = NavigationPath()
+    @Published var pendingDestination: ToolDestination?
 
     // MARK: File picker purposes
 
@@ -227,10 +244,44 @@ final class ToolsViewModel: ObservableObject {
         isShowingFilePicker = true
     }
 
+    // swiftlint:disable:next cyclomatic_complexity
     func handleImportedURLs(_ urls: [URL]) {
-        // Workflow routing will be driven by `filePickerPurpose`.
-        // Concrete workflow views (out of scope for this file) will
-        // observe the incoming URLs through the coordinator / parent.
+        switch filePickerPurpose {
+        case .merge:
+            pendingDestination = .merge(urls)
+        case .split:
+            guard let first = urls.first else { return }
+            pendingDestination = .split(first)
+        case .compress:
+            guard let first = urls.first else { return }
+            pendingDestination = .compress(first)
+        case .rotate:
+            guard let first = urls.first else { return }
+            pendingDestination = .rotate(first)
+        case .protect:
+            guard let first = urls.first else { return }
+            pendingDestination = .protect(first)
+        case .unlock:
+            guard let first = urls.first else { return }
+            pendingDestination = .unlock(first)
+        case .sign:
+            // Sign not yet implemented — show error
+            showError(String(localized: "error.feature_coming_soon"))
+        case .extractPages:
+            guard let first = urls.first else { return }
+            pendingDestination = .extractPages(first)
+        case .imagesToPDF:
+            pendingDestination = .imagesToPDF(urls)
+        case .wordToPDF:
+            guard let first = urls.first else { return }
+            pendingDestination = .convertToPDF(first)
+        case .excelToPDF:
+            guard let first = urls.first else { return }
+            pendingDestination = .convertToPDF(first)
+        case .importPDF:
+            // importPDF needs a DocuScanDocument — skip navigation for now
+            break
+        }
     }
 
     func showError(_ message: String) {
@@ -255,7 +306,7 @@ struct ToolsView: View {
     ]
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $viewModel.navigationPath) {
             ScrollView {
                 VStack(alignment: .leading, spacing: Spacing.lg) {
                     quickActionsStrip
@@ -269,6 +320,9 @@ struct ToolsView: View {
             .navigationTitle(String(localized: "app.name"))
             .navigationBarTitleDisplayMode(.large)
             .toolbar { toolbarContent }
+            .navigationDestination(for: ToolDestination.self) { destination in
+                destinationView(for: destination)
+            }
             .fileImporter(
                 isPresented: $viewModel.isShowingFilePicker,
                 allowedContentTypes: viewModel.filePickerPurpose.allowedTypes,
@@ -279,6 +333,12 @@ struct ToolsView: View {
                     viewModel.handleImportedURLs(urls)
                 case .failure(let error):
                     viewModel.showError(error.localizedDescription)
+                }
+            }
+            .onChange(of: viewModel.pendingDestination) { destination in
+                if let dest = destination {
+                    viewModel.navigationPath.append(dest)
+                    viewModel.pendingDestination = nil
                 }
             }
             .sheet(isPresented: $viewModel.isShowingScanner) {
@@ -307,6 +367,34 @@ struct ToolsView: View {
             }
         }
         .withAdBanner()
+    }
+
+    // MARK: Navigation destination builder
+
+    @ViewBuilder
+    private func destinationView(for destination: ToolDestination) -> some View {
+        switch destination {
+        case .merge(let urls):
+            MergeToolView(initialURLs: urls)
+        case .split(let url):
+            SplitToolView(sourceURL: url)
+        case .compress(let url):
+            CompressToolView(url: url)
+        case .rotate(let url):
+            RotateToolView(sourceURL: url)
+        case .protect(let url):
+            ProtectToolView(sourceURL: url)
+        case .unlock(let url):
+            UnlockToolView(sourceURL: url)
+        case .extractPages(let url):
+            ExtractPagesToolView(sourceURL: url)
+        case .imagesToPDF(let urls):
+            ImagesToPDFToolView(imageURLs: urls)
+        case .convertToPDF(let url):
+            ConvertToPDFToolView(sourceURL: url)
+        case .documentViewer(let doc):
+            DocumentViewerView(source: .saved(doc))
+        }
     }
 
     // MARK: Quick Actions
