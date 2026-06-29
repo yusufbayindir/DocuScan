@@ -296,7 +296,6 @@ private struct OnboardingInputPage: View {
                 .focused($isFocused)
                 .submitLabel(.done)
                 .onSubmit { if canAdvance { action() } }
-                .onAppear { isFocused = true }
 
             Spacer()
             HearthPrimaryButton(title: buttonLabel, isDisabled: !canAdvance, action: action)

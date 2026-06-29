@@ -5,22 +5,22 @@ enum MockDataService {
     static let partnerBId = UUID(uuidString: "BBBBBBBB-0000-0000-0000-000000000002")!
 
     static let categories: [Category] = [
-        Category(id: UUID(uuidString: "CAT00001-0000-0000-0000-000000000001")!, name: "Food & Dining", emoji: "🍔", colorHex: "#FF6B35"),
-        Category(id: UUID(uuidString: "CAT00002-0000-0000-0000-000000000002")!, name: "Groceries",     emoji: "🛒", colorHex: "#4CAF50"),
-        Category(id: UUID(uuidString: "CAT00003-0000-0000-0000-000000000003")!, name: "Shopping",      emoji: "🛍️", colorHex: "#9C27B0"),
-        Category(id: UUID(uuidString: "CAT00004-0000-0000-0000-000000000004")!, name: "Transport",     emoji: "🚗", colorHex: "#2196F3"),
-        Category(id: UUID(uuidString: "CAT00005-0000-0000-0000-000000000005")!, name: "Entertainment", emoji: "🎬", colorHex: "#E91E63"),
-        Category(id: UUID(uuidString: "CAT00006-0000-0000-0000-000000000006")!, name: "Health",        emoji: "💊", colorHex: "#00BCD4"),
-        Category(id: UUID(uuidString: "CAT00007-0000-0000-0000-000000000007")!, name: "Travel",        emoji: "✈️", colorHex: "#FF9800"),
-        Category(id: UUID(uuidString: "CAT00008-0000-0000-0000-000000000008")!, name: "Utilities",     emoji: "🏠", colorHex: "#607D8B"),
-        Category(id: UUID(uuidString: "CAT00009-0000-0000-0000-000000000009")!, name: "Coffee",        emoji: "☕", colorHex: "#795548"),
-        Category(id: UUID(uuidString: "CAT00010-0000-0000-0000-000000000010")!, name: "Subscriptions", emoji: "📱", colorHex: "#3F51B5"),
-        Category(id: UUID(uuidString: "CAT00011-0000-0000-0000-000000000011")!, name: "Fitness",       emoji: "💪", colorHex: "#F44336"),
-        Category(id: UUID(uuidString: "CAT00012-0000-0000-0000-000000000012")!, name: "Beauty",        emoji: "💄", colorHex: "#EC407A"),
-        Category(id: UUID(uuidString: "CAT00013-0000-0000-0000-000000000013")!, name: "Education",     emoji: "📚", colorHex: "#009688"),
-        Category(id: UUID(uuidString: "CAT00014-0000-0000-0000-000000000014")!, name: "Gifts",         emoji: "🎁", colorHex: "#E91E63"),
-        Category(id: UUID(uuidString: "CAT00015-0000-0000-0000-000000000015")!, name: "Income",        emoji: "💰", colorHex: "#4CAF50"),
-        Category(id: UUID(uuidString: "CAT00016-0000-0000-0000-000000000016")!, name: "Other",         emoji: "📦", colorHex: "#9E9E9E"),
+        Category(id: UUID(uuidString: "CA700001-0000-0000-0000-000000000001")!, name: "Food & Dining", emoji: "🍔", colorHex: "#FF6B35"),
+        Category(id: UUID(uuidString: "CA700002-0000-0000-0000-000000000002")!, name: "Groceries",     emoji: "🛒", colorHex: "#4CAF50"),
+        Category(id: UUID(uuidString: "CA700003-0000-0000-0000-000000000003")!, name: "Shopping",      emoji: "🛍️", colorHex: "#9C27B0"),
+        Category(id: UUID(uuidString: "CA700004-0000-0000-0000-000000000004")!, name: "Transport",     emoji: "🚗", colorHex: "#2196F3"),
+        Category(id: UUID(uuidString: "CA700005-0000-0000-0000-000000000005")!, name: "Entertainment", emoji: "🎬", colorHex: "#E91E63"),
+        Category(id: UUID(uuidString: "CA700006-0000-0000-0000-000000000006")!, name: "Health",        emoji: "💊", colorHex: "#00BCD4"),
+        Category(id: UUID(uuidString: "CA700007-0000-0000-0000-000000000007")!, name: "Travel",        emoji: "✈️", colorHex: "#FF9800"),
+        Category(id: UUID(uuidString: "CA700008-0000-0000-0000-000000000008")!, name: "Utilities",     emoji: "🏠", colorHex: "#607D8B"),
+        Category(id: UUID(uuidString: "CA700009-0000-0000-0000-000000000009")!, name: "Coffee",        emoji: "☕", colorHex: "#795548"),
+        Category(id: UUID(uuidString: "CA700010-0000-0000-0000-000000000010")!, name: "Subscriptions", emoji: "📱", colorHex: "#3F51B5"),
+        Category(id: UUID(uuidString: "CA700011-0000-0000-0000-000000000011")!, name: "Fitness",       emoji: "💪", colorHex: "#F44336"),
+        Category(id: UUID(uuidString: "CA700012-0000-0000-0000-000000000012")!, name: "Beauty",        emoji: "💄", colorHex: "#EC407A"),
+        Category(id: UUID(uuidString: "CA700013-0000-0000-0000-000000000013")!, name: "Education",     emoji: "📚", colorHex: "#009688"),
+        Category(id: UUID(uuidString: "CA700014-0000-0000-0000-000000000014")!, name: "Gifts",         emoji: "🎁", colorHex: "#E91E63"),
+        Category(id: UUID(uuidString: "CA700015-0000-0000-0000-000000000015")!, name: "Income",        emoji: "💰", colorHex: "#4CAF50"),
+        Category(id: UUID(uuidString: "CA700016-0000-0000-0000-000000000016")!, name: "Other",         emoji: "📦", colorHex: "#9E9E9E"),
     ]
 
     static func setupAppState(_ state: AppState) {
