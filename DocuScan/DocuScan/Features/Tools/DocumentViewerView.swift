@@ -23,6 +23,7 @@ struct DocumentViewerView: View {
     @State private var isShowingError: Bool = false
     @State private var isShowingShareSheet: Bool = false
     @State private var shareURL: URL?
+    @State private var cachedPDFDocument: PDFDocument?
 
     private var navigationTitle: String {
         switch source {
@@ -34,6 +35,7 @@ struct DocumentViewerView: View {
     }
 
     private var pdfDocument: PDFDocument? {
+        if let cached = cachedPDFDocument { return cached }
         switch source {
         case .processed(let pdf, _):
             return pdf
@@ -80,6 +82,15 @@ struct DocumentViewerView: View {
             if let url = shareURL {
                 ShareSheet(activityItems: [url])
                     .ignoresSafeArea()
+            }
+        }
+        .task {
+            if case .saved(let doc) = source, cachedPDFDocument == nil {
+                let url = doc.url
+                let pdf = await Task.detached(priority: .userInitiated) {
+                    PDFDocument(url: url)
+                }.value
+                cachedPDFDocument = pdf
             }
         }
     }

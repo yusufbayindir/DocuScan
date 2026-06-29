@@ -715,6 +715,46 @@
         }
       }
     },
+    "split_tool.error.invalid_range": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invalid range: %@"
+          }
+        }
+      }
+    },
+    "split_tool.error.start_exceeds_end": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start must be ≤ end in range: %@"
+          }
+        }
+      }
+    },
+    "split_tool.error.page_not_a_number": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not a valid page number: %@"
+          }
+        }
+      }
+    },
+    "split_tool.error.page_exceeds_length": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Page %lld exceeds document length (%lld pages)"
+          }
+        }
+      }
+    },
     "compress.nav_title": {
       "localizations": {
         "en": {

@@ -384,27 +384,32 @@ private func parseRanges(
             guard parts.count == 2,
                   let lower = Int(parts[0]),
                   let upper = Int(parts[1]) else {
-                return .failure(SplitParseError(message: "Invalid range: \(token)"))
+                let msg = String(format: String(localized: "split_tool.error.invalid_range"), token)
+                return .failure(SplitParseError(message: msg))
             }
             guard lower >= 1 else {
                 return .failure(SplitParseError(message: String(localized: "split_tool.error.page_below_one")))
             }
             guard lower <= upper else {
-                return .failure(SplitParseError(message: "Start must be ≤ end in range: \(token)"))
+                let msg = String(format: String(localized: "split_tool.error.start_exceeds_end"), token)
+                return .failure(SplitParseError(message: msg))
             }
             if pageCount > 0, upper > pageCount {
-                return .failure(SplitParseError(message: "Page \(upper) exceeds document length (\(pageCount) pages)"))
+                let msg = String(format: String(localized: "split_tool.error.page_exceeds_length"), upper, pageCount)
+                return .failure(SplitParseError(message: msg))
             }
             ranges.append((lower - 1)...(upper - 1))
         } else {
             guard let page = Int(token) else {
-                return .failure(SplitParseError(message: "Not a valid page number: \(token)"))
+                let msg = String(format: String(localized: "split_tool.error.page_not_a_number"), token)
+                return .failure(SplitParseError(message: msg))
             }
             guard page >= 1 else {
                 return .failure(SplitParseError(message: String(localized: "split_tool.error.page_below_one")))
             }
             if pageCount > 0, page > pageCount {
-                return .failure(SplitParseError(message: "Page \(page) exceeds document length (\(pageCount) pages)"))
+                let msg = String(format: String(localized: "split_tool.error.page_exceeds_length"), page, pageCount)
+                return .failure(SplitParseError(message: msg))
             }
             ranges.append((page - 1)...(page - 1))
         }

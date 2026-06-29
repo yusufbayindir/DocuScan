@@ -53,15 +53,9 @@ struct MergeToolView: View {
         } message: { message in
             Text(message)
         }
-        .background(
-            NavigationLink(
-                isActive: $navigateToResult,
-                destination: { destinationView },
-                label: { EmptyView() }
-            )
-            .hidden()
-        )
-        .task {}
+        .navigationDestination(isPresented: $navigateToResult) {
+            destinationView
+        }
     }
 
     // MARK: - Destination

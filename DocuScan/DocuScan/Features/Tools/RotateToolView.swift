@@ -304,7 +304,7 @@ struct RotateToolView: View {
                 degrees: selectedDegrees
             )
             let baseName = sourceURL.deletingPathExtension().lastPathComponent
-            let savedDoc = try await appEnvironment.documentStore.save(
+            let savedDoc = try appEnvironment.documentStore.save(
                 pdfDocument: rotated,
                 name: String(localized: "rotate.saved_name \(baseName)")
             )
