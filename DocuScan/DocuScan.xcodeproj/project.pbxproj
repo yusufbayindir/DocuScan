@@ -37,6 +37,7 @@
 		C4511C9F3F58448F77DAD536 /* RotateToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FE75759D978CFDF2683C42 /* RotateToolView.swift */; };
 		CAEE820011B68459FF9E7B11 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7977811D00F2E1BD55BFC7 /* FavoritesView.swift */; };
 		CF46BDD812644901DD600DD4 /* DocuScanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56B265A5D27252B64D0D0B /* DocuScanTests.swift */; };
+		A1B2C3D4E5F6A7B8C9D0E1F2 /* ExtendedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6A7B8C9D0E1F2A3 /* ExtendedTests.swift */; };
 		D6F36187D3ADC3AC1C893024 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 2782DD97F6114E4F0FF8FE90 /* PrivacyInfo.xcprivacy */; };
 		D7DC7364CD48C17EE0220C63 /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3364C701D2F066CB7403EA /* ToolsView.swift */; };
 		DFFC6A2110C46A4C04873878 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 58426D3E4A37C83EEF69F341 /* Localizable.xcstrings */; };
@@ -102,6 +103,7 @@
 		E843E7D6C989F1401066ADCB /* PDFToolsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFToolsService.swift; sourceTree = "<group>"; };
 		EB92834D5E6EDA29DF3C2042 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED56B265A5D27252B64D0D0B /* DocuScanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocuScanTests.swift; sourceTree = "<group>"; };
+		B2C3D4E5F6A7B8C9D0E1F2A3 /* ExtendedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedTests.swift; sourceTree = "<group>"; };
 		F8EEB7649774E318CBDF9092 /* DocumentViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				ED56B265A5D27252B64D0D0B /* DocuScanTests.swift */,
+				B2C3D4E5F6A7B8C9D0E1F2A3 /* ExtendedTests.swift */,
 			);
 			path = DocuScanTests;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF46BDD812644901DD600DD4 /* DocuScanTests.swift in Sources */,
+				A1B2C3D4E5F6A7B8C9D0E1F2 /* ExtendedTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
