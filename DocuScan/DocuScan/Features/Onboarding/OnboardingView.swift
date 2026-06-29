@@ -17,6 +17,8 @@ private enum OnboardingPage: Int, CaseIterable {
 final class OnboardingViewModel: ObservableObject {
     @Published var currentPage: Int = 0
     @Published var isPurchasing: Bool = false
+    @Published var purchaseError: String?
+    @Published var showPurchaseError: Bool = false
     @AppStorage("hasCompletedOnboarding") var hasCompletedOnboarding: Bool = false
     @AppStorage("isPremium") var isPremium: Bool = false
 
@@ -47,20 +49,36 @@ final class OnboardingViewModel: ObservableObject {
         }
     }
 
-    func purchasePremium() {
+    func purchasePremium(iapService: IAPService) {
+        guard !isPurchasing else { return }
         isPurchasing = true
         Task { @MainActor [weak self] in
             guard let self else { return }
-            // Stub: replace with real StoreKit 2 purchase when IAP is wired up.
-            try? await Task.sleep(nanoseconds: 500_000_000)
-            self.isPremium = true
+            do {
+                try await iapService.purchase()
+                if self.isPremium { self.complete() }
+            } catch {
+                purchaseError = error.localizedDescription
+                showPurchaseError = true
+            }
             self.isPurchasing = false
-            self.complete()
         }
     }
 
-    func restorePurchases() {
-        // Stub: replace with real StoreKit 2 restore when IAP is wired up.
+    func restorePurchases(iapService: IAPService) {
+        guard !isPurchasing else { return }
+        isPurchasing = true
+        Task { @MainActor [weak self] in
+            guard let self else { return }
+            do {
+                try await iapService.restore()
+                if self.isPremium { self.complete() }
+            } catch {
+                purchaseError = error.localizedDescription
+                showPurchaseError = true
+            }
+            self.isPurchasing = false
+        }
     }
 }
 
@@ -68,6 +86,7 @@ final class OnboardingViewModel: ObservableObject {
 
 struct OnboardingView: View {
     @StateObject private var viewModel = OnboardingViewModel()
+    @EnvironmentObject private var appEnvironment: AppEnvironment
 
     var body: some View {
         ZStack {
@@ -83,7 +102,7 @@ struct OnboardingView: View {
                 TrackingPage(viewModel: viewModel)
                     .tag(OnboardingPage.tracking.rawValue)
 
-                PaywallPage(viewModel: viewModel)
+                PaywallPage(viewModel: viewModel, iapService: appEnvironment.iapService)
                     .tag(OnboardingPage.paywall.rawValue)
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
@@ -95,6 +114,21 @@ struct OnboardingView: View {
                 current: viewModel.currentPage
             )
             .padding(.bottom, Spacing.xl)
+        }
+        .task {
+            await appEnvironment.iapService.loadProducts()
+            await appEnvironment.iapService.refreshEntitlements()
+        }
+        .alert(
+            String(localized: "error.title"),
+            isPresented: $viewModel.showPurchaseError,
+            presenting: viewModel.purchaseError
+        ) { _ in
+            Button(String(localized: "button.ok")) {
+                viewModel.showPurchaseError = false
+            }
+        } message: { msg in
+            Text(msg)
         }
     }
 }
@@ -398,6 +432,7 @@ private struct TrackingBullet: View {
 
 private struct PaywallPage: View {
     @ObservedObject var viewModel: OnboardingViewModel
+    let iapService: IAPService
 
     var body: some View {
         VStack(spacing: 0) {
@@ -472,14 +507,14 @@ private struct PaywallPage: View {
                     String(localized: "onboarding.paywall.button.buy"),
                     icon: "crown.fill"
                 ) {
-                    viewModel.purchasePremium()
+                    viewModel.purchasePremium(iapService: iapService)
                 }
                 .disabled(viewModel.isPurchasing)
                 .opacity(viewModel.isPurchasing ? 0.6 : 1)
 
                 HStack(spacing: Spacing.lg) {
                     Button {
-                        viewModel.restorePurchases()
+                        viewModel.restorePurchases(iapService: iapService)
                     } label: {
                         Text(String(localized: "onboarding.paywall.button.restore"))
                             .font(.dsCallout)
